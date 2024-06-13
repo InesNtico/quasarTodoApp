@@ -12,7 +12,7 @@
         />
       </q-toolbar>
       <div class="q-px-lg q-pt-xl q-mb-md">
-        <div class="text-h3">Todo!!!</div>
+        <div class="text-h3">Todo</div>
         <div class="text-subtitle1">{{ dateString }}</div>
       </div>
       <q-img src="../statics/milky-way.jpg" class="header-image absolute-top" />
@@ -32,7 +32,7 @@
         "
       >
         <q-list padding>
-          <q-item clickable v-ripple>
+          <q-item to="/" exact clickable v-ripple>
             <q-item-section avatar>
               <q-icon name="list" />
             </q-item-section>
@@ -40,7 +40,7 @@
             <q-item-section> Todo </q-item-section>
           </q-item>
 
-          <q-item clickable v-ripple>
+          <q-item to="/help" exact clickable v-ripple>
             <q-item-section avatar>
               <q-icon name="help" />
             </q-item-section>
