@@ -50,6 +50,10 @@
         </q-item-section>
       </q-item>
     </q-list>
+    <div v-if="!tasks.length" class="noTasks absolute-center">
+      <q-icon name="check" size="100px" color="primary" />
+      <div class="text-h5 text-primary text-center">No tasks</div>
+    </div>
   </q-page>
 </template>
 
@@ -59,7 +63,7 @@ export default {
     return {
       newTask: "",
       tasks: [
-        {
+        /* {
           title: "Task 1",
           done: false,
         },
@@ -72,7 +76,7 @@ export default {
         {
           title: "Task 3",
           done: false,
-        },
+        }, */
       ],
     };
   },
@@ -115,5 +119,9 @@ export default {
     text-decoration: line-through;
     color: #bbb;
   }
+}
+
+.noTasks {
+  opacity: 0.5;
 }
 </style>
