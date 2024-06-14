@@ -5,7 +5,7 @@
         v-for="task in tasks"
         :key="task.title"
         @click="task.done = !task.done"
-        :class="{ done: task.done }"
+        :class="{ 'done bg-deep-purple-1': task.done }"
         clickable
         v-ripple
       >
@@ -50,3 +50,12 @@ export default {
   },
 };
 </script>
+
+<style lang="scss">
+.done {
+  .q-item__section {
+    text-decoration: line-through;
+    color: #bbb;
+  }
+}
+</style>
