@@ -1,4 +1,4 @@
-# quasar-todo-app (quasar-todo)
+# quasar-todo-app (quasar-todo) Terminé
 
 a todolist app using quasar
 
