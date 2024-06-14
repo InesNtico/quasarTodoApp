@@ -50,19 +50,17 @@
         </q-list>
       </q-scroll-area>
 
-      <q-img
-        class="absolute-top bg-primary"
-        src="../statics/milky-way.jpg"
-        style="height: 192px"
-      >
-        <div class="absolute-bottom bg-transparent q-ml-md q-mb-md">
-          <q-avatar size="56px" class="q-mb-sm">
-            <img src="../statics/blank-profile-picture-973460_1280.png" />
-          </q-avatar>
+      <q-item class="absolute-top bg-primary" style="height: 192px">
+        <div class="absolute-bottom q-ma-md text-white">
+          <div class="profile-picture">
+            <q-avatar size="80px" class="q-mb-sm">
+              <img src="../statics/blank-profile-picture-973460_1280.png " />
+            </q-avatar>
+          </div>
           <div class="text-weight-bold">toto</div>
-          <div>@toto</div>
+          <div>toto.titi@example.com</div>
         </div>
-      </q-img>
+      </q-item>
     </q-drawer>
 
     <q-page-container>
@@ -77,7 +75,6 @@
 
 <script setup>
 import { ref } from "vue";
-import EssentialLink from "components/EssentialLink.vue";
 import { date } from "quasar";
 
 let timeStamp = Date.now();
@@ -86,51 +83,6 @@ let dateString = date.formatDate(timeStamp, "dddd D MMMM YYYY");
 defineOptions({
   name: "MainLayout",
 });
-
-const linksList = [
-  {
-    title: "Docs",
-    caption: "quasar.dev",
-    icon: "school",
-    link: "https://quasar.dev",
-  },
-  {
-    title: "Github",
-    caption: "github.com/quasarframework",
-    icon: "code",
-    link: "https://github.com/quasarframework",
-  },
-  {
-    title: "Discord Chat Channel",
-    caption: "chat.quasar.dev",
-    icon: "chat",
-    link: "https://chat.quasar.dev",
-  },
-  {
-    title: "Forum",
-    caption: "forum.quasar.dev",
-    icon: "record_voice_over",
-    link: "https://forum.quasar.dev",
-  },
-  {
-    title: "Twitter",
-    caption: "@quasarframework",
-    icon: "rss_feed",
-    link: "https://twitter.quasar.dev",
-  },
-  {
-    title: "Facebook",
-    caption: "@QuasarFramework",
-    icon: "public",
-    link: "https://facebook.quasar.dev",
-  },
-  {
-    title: "Quasar Awesome",
-    caption: "Community Quasar projects",
-    icon: "favorite",
-    link: "https://awesome.quasar.dev",
-  },
-];
 
 const leftDrawerOpen = ref(false);
 
@@ -144,5 +96,10 @@ function toggleLeftDrawer() {
   height: 100%;
   z-index: -1;
   opacity: 0.8;
+}
+
+.profile-picture {
+  display: flex;
+  justify-content: center;
 }
 </style>

@@ -96,6 +96,8 @@ export default {
             message: "Task deleted",
             color: "negative",
             icon: "delete",
+            timeout: 800,
+            group: false,
           });
         });
     },
@@ -107,6 +109,8 @@ export default {
         message: "Task added",
         color: "positive",
         icon: "check",
+        timeout: 800,
+        group: false,
       });
     },
   },
