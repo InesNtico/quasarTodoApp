@@ -1,5 +1,22 @@
 <template>
   <q-page class="bg-grey-3 column">
+    <div class="row q-pa-sm bg-primary">
+      <!--task is added by pressing the enter key or clicking on the button-->
+      <q-input
+        @keyup.enter="addTask"
+        v-model="newTask"
+        class="col"
+        filled
+        square
+        placeholder="Add a task"
+        dense
+        bg-color="white"
+      >
+        <template v-slot:append>
+          <q-btn round dense flat icon="add" @click="addTask" />
+        </template>
+      </q-input>
+    </div>
     <q-list class="bg-white" separator bordered>
       <q-item
         v-for="(task, index) in tasks"
@@ -40,6 +57,7 @@
 export default {
   data() {
     return {
+      newTask: "",
       tasks: [
         {
           title: "Task 1",
@@ -76,6 +94,16 @@ export default {
             icon: "delete",
           });
         });
+    },
+
+    addTask() {
+      this.tasks.push({ title: this.newTask, done: false });
+      this.newTask = "";
+      this.$q.notify({
+        message: "Task added",
+        color: "positive",
+        icon: "check",
+      });
     },
   },
 };
